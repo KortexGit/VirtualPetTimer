@@ -1,0 +1,33 @@
+﻿<Window x:Class="Virtual_Pet_V0._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Virtual_Pet_V0._0"
+        mc:Ignorable="d"
+        Title="Virtual Pet" Height="400" Width="400">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Top" />
+            <Image Source="{Binding ImageSource}" Width="100" Height="100"/>
+            <TextBlock Text="{Binding Description}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
+            <ProgressBar Value="{Binding Happiness}" Minimum="0" Maximum="100" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
+            <TextBlock Text="Happiness" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ProgressBar Value="{Binding Hunger}" Minimum="0" Maximum="100" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200"/>
+            <TextBlock Text="Hunger" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ProgressBar Value="{Binding Thirst}" Minimum="0" Maximum="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200"/>
+            <TextBlock Text="Thirst" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Buttons to feed and water the pet -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,0">
+            <Button Content="Feed" Click="FeedButton_Click" Margin="10"/>
+            <Button Content="Water" Click="WaterButton_Click" Margin="10"/>
+            <Button Content="Hunger" Click="HungerButton_Click" Margin="10"/>
+            <Button Content="Thirst" Click="ThirstButton_Click" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
